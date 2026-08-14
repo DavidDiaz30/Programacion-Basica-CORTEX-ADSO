@@ -1,1 +1,4 @@
-# Programacion-Basica
+# Programacion-Basica-ADSO
+## Integrantes
+### Santiago López, Ivan Alvarez, David Figueredo
+
