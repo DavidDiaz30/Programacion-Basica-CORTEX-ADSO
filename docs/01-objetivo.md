@@ -1,0 +1,2 @@
+## ¿Qué problema resuelve, quién lo usará y qué no hará?
+- Un asistente inteligente creado por y para estudiantes de la UIS, que permite a principiantes en programación, aprender programación mediante la interacción con un asistente inteligente el cual utiliza un modelo de lenguaje (LLM) y la técnica RAG consultando una guía en formato PDF, que responderá dudas y preguntas de dicha guía sobre aprender a programar.

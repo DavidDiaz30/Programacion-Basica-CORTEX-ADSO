@@ -1,0 +1,20 @@
+{
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  "editor.suggestOnTriggerCharacters": true,
+
+  "editor.wordBasedSuggestions": "currentDocument",
+
+  "editor.inlineSuggest.enabled": false,
+
+  "github.copilot.enable": {
+    "*": true
+  },
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "files.autoSave": "afterDelay",
+  "workbench.iconTheme": "material-icon-theme"
+}
