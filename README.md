@@ -7,4 +7,12 @@
 ### Semana 3
 <img width="1574" height="1566" alt="image" src="https://github.com/user-attachments/assets/f8b64b12-f5d1-41c8-bc78-2e6cfdf81ddf" />
 
+Procesamiento Lingüístico (10/10): Dominio absoluto del lenguaje natural y sintáctico. Puede interpretar prompts complejos, traducir código entre múltiples lenguajes de programación y redactar explicaciones pedagógicas claras y estructuradas.
 
+Aprendizaje y Memoria (9/10): Acceso instantáneo a bases de conocimiento masivas, documentación técnica y patrones de diseño. Su única limitación es el techo de la ventana de contexto durante sesiones muy extensas.
+
+Percepción y Atención (8/10): Excelente capacidad para rastrear variables, detectar errores sintácticos y procesar contexto mediante mecanismos de atención, aunque puede obviar detalles del entorno de ejecución o interfaz gráfica.
+
+Pensamiento y Razonamiento (8/10): Alta competencia en resolución de problemas algebráicos, diseño de algoritmos y optimización paso a paso, restringida en escenarios de abstracción profunda sin ejecución en tiempo real.
+
+Motivación, Cognición y Emoción (3/10): Carece de emociones, conciencia o motivación intrínseca. Su acompañamiento empático y actitud alentadora son simulaciones programadas, no estados emocionales reales.
