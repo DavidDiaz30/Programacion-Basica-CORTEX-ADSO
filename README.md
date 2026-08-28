@@ -16,6 +16,8 @@ Percepción y Atención (8/10): Excelente capacidad para rastrear variables, det
 Pensamiento y Razonamiento (8/10): Alta competencia en resolución de problemas algebráicos, diseño de algoritmos y optimización paso a paso, restringida en escenarios de abstracción profunda sin ejecución en tiempo real.
 
 Motivación, Cognición y Emoción (3/10): Carece de emociones, conciencia o motivación intrínseca. Su acompañamiento empático y actitud alentadora son simulaciones programadas, no estados emocionales reales.
+
+### Semana 4 y 5
 <img width="1061" height="779" alt="image" src="https://github.com/user-attachments/assets/c090c52e-4aa1-4e40-8324-e7dfd650062f" />
 <img width="679" height="867" alt="image" src="https://github.com/user-attachments/assets/46a95c91-38c9-45ff-8c4b-851454b66b45" />
 
