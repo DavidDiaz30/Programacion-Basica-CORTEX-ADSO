@@ -78,3 +78,38 @@ El radar cognitivo del asistente (ver `radar_cognitivo.png`) muestra el balance 
 | Motivación, Cognición y Emoción | 3 |
 
 El punto más débil es **Motivación, Cognición y Emoción (3/10)**, lo que refuerza por qué la Regla de Atención incorpora explícitamente la detección de tono/emojis: es el mecanismo compensatorio para no perder de vista el estado emocional del estudiante pese a que esa dimensión es, por diseño, la menos desarrollada del asistente.
+## 3. Arquitectura de Memoria
+
+Esta sección documenta el diseño de la memoria del asistente y corresponde a la Semana 7 (Memoria y Conocimiento Permanente) del plan de desarrollo. Las tablas simulan el esquema de una base de datos: cada fila representa una categoría de datos almacenados y el tipo de memoria al que pertenece.
+
+### 3.1 Principio general: Memoria a largo plazo (LTM)
+
+El asistente distingue dos tipos de memoria de largo plazo:
+
+- **Memoria semántica:** conocimiento general y estable, independiente del estudiante (su "enciclopedia interna").
+- **Memoria episódica:** información específica de cada estudiante y de sus interacciones previas con el asistente.
+
+### 3.2 Memoria semántica (enciclopedia interna)
+
+| Tipo de Memoria | Categoría de Datos | Descripción | Ejemplo de Entrada |
+|---|---|---|---|
+| Semántica (LTM) | Fundamentos de programación | Conceptos base: variables, tipos de datos y operadores | "Variable: espacio de memoria con nombre que almacena un valor" |
+| Semántica (LTM) | Estructuras de control | Condicionales y ciclos con su sintaxis y uso | "for: ciclo que repite un bloque un número definido de veces" |
+| Semántica (LTM) | Funciones y modularidad | Definición, parámetros y valores de retorno | "def suma(a, b): return a + b" |
+| Semántica (LTM) | Errores comunes | Mensajes de error frecuentes, su causa y su solución | "IndentationError: bloque con sangría incorrecta" |
+| Semántica (LTM) | Sintaxis por lenguaje | Reglas de escritura propias de cada lenguaje (Python, entre otros) | "Python: los bloques se delimitan por sangría, no por llaves" |
+| Semántica (LTM) | Glosario de tecnicismos | Definiciones claras de términos técnicos para principiantes | "Algoritmo: secuencia finita de pasos para resolver un problema" |
+| Semántica (LTM) | Buenas prácticas | Convenciones básicas de estilo y legibilidad del código | "Usar nombres descriptivos para las variables" |
+
+### 3.3 Memoria episódica (datos del estudiante)
+
+| Tipo de Memoria | Categoría de Datos | Descripción | Ejemplo de Entrada |
+|---|---|---|---|
+| Episódica (LTM) | Perfil del estudiante | Nivel y lenguaje con el que trabaja | "Nivel: principiante, Lenguaje: Python" |
+| Episódica (LTM) | Historial de errores | Errores recurrentes del estudiante, para reforzar los temas débiles | "Error frecuente: confundir `=` con `==`" |
+| Episódica (LTM) | Patrones de estudio | Horarios de consulta obtenidos del timestamp del Gatekeeper | "Consultas frecuentes después de las 11:00 p.m." |
+| Episódica (LTM) | Estado emocional | Frustración o confusión detectada por tono y emojis | "Última sesión: frustración alta ante ciclos `for`" |
+
+### 3.4 Relación con el Gatekeeper
+
+La memoria se articula con la Arquitectura de Atención (Sección 2): el Gatekeeper filtra el mensaje del estudiante y las palabras clave técnicas detectadas (por ejemplo, `for`, `error`, `python`) funcionan como consulta hacia la memoria semántica. A su vez, el timestamp y la detección de tono alimentan la memoria episódica, lo que permite ajustar las explicaciones al historial del estudiante.
