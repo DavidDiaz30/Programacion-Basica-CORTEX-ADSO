@@ -164,8 +164,7 @@ Si el bot tutor de programación fuera una persona, sería un compañero de estu
 
 ### Semana 8
 
-![Evidencia de la Semana 8](<img width="1388" height="1125" alt="image" src="https://github.com/user-attachments/assets/0b0b3201-ac4e-459c-a52b-aede240b4c84" />
-)
+![Evidencia de la Semana 8](https://github.com/user-attachments/assets/42733fb3-ec36-4b04-97fe-367a041531f2)
 
 ### Semana 9
 
