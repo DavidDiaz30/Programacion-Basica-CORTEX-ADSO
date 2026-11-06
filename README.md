@@ -6,17 +6,24 @@ Asistente de aprendizaje básico de programación: documentación del diseño po
 
 ## Contenido
 
-1. [Descripción y parámetros del asistente](#1-descripción-y-parámetros-del-asistente)
-2. [Perfil cognitivo (Semana 3)](#2-perfil-cognitivo-semana-3)
-3. [Arquitectura de Atención: Gatekeeper (Semana 6)](#3-arquitectura-de-atención-gatekeeper-semana-6)
-4. [Arquitectura de Memoria (Semana 7)](#4-arquitectura-de-memoria-semana-7)
-5. [Guía de Estilo y Tono (Semana 10)](#5-guía-de-estilo-y-tono-semana-10)
-6. [Simulación de Diálogo: Golden Samples (Semana 12)](#6-simulación-de-diálogo-golden-samples-semana-12)
-7. [Anexo: Evidencias por semana](#7-anexo-evidencias-por-semana)
+- [Descripción y parámetros del asistente](#descripción-y-parámetros-del-asistente)
+- [Semanas 1 y 2](#semanas-1-y-2)
+- [Semana 3: Perfil cognitivo](#semana-3-perfil-cognitivo)
+- [Semanas 4 y 5](#semanas-4-y-5)
+- [Semana 6: Arquitectura de Atención (Gatekeeper)](#semana-6-arquitectura-de-atención-gatekeeper)
+- [Semana 7: Arquitectura de Memoria](#semana-7-arquitectura-de-memoria)
+- [Semana 8](#semana-8)
+- [Semana 9](#semana-9)
+- [Semana 10: Guía de Estilo y Tono](#semana-10-guía-de-estilo-y-tono)
+- [Semana 11](#semana-11)
+- [Semana 12: Simulación de Diálogo (Golden Samples)](#semana-12-simulación-de-diálogo-golden-samples)
+- [Semana 13](#semana-13)
+- [Semana 14: Lógica y Ética (Mitigación del Sesgo Cognitivo)](#semana-14-lógica-y-ética-mitigación-del-sesgo-cognitivo)
+- [Semana 15](#semana-15)
 
 ---
 
-## 1. Descripción y parámetros del asistente
+## Descripción y parámetros del asistente
 
 | Parámetro | Definición |
 |---|---|
@@ -27,7 +34,13 @@ Asistente de aprendizaje básico de programación: documentación del diseño po
 
 ---
 
-## 2. Perfil cognitivo (Semana 3)
+## Semanas 1 y 2
+
+![Evidencia de las Semanas 1 y 2](https://github.com/user-attachments/assets/57b86c2d-c6df-4d00-b45c-47f58f8d6970)
+
+---
+
+## Semana 3: Perfil cognitivo
 
 ![Semana 3](https://github.com/user-attachments/assets/f8b64b12-f5d1-41c8-bc78-2e6cfdf81ddf)
 
@@ -39,22 +52,30 @@ Asistente de aprendizaje básico de programación: documentación del diseño po
 | Pensamiento y Razonamiento | 8 | Alta competencia en resolución de problemas algebraicos, diseño de algoritmos y optimización paso a paso, restringida en escenarios de abstracción profunda sin ejecución en tiempo real. |
 | Motivación, Cognición y Emoción | 3 | Carece de emociones, conciencia o motivación intrínseca. Su acompañamiento empático y su actitud alentadora son simulaciones programadas, no estados emocionales reales. |
 
-El punto más débil es **Motivación, Cognición y Emoción (3/10)**. Por ello, la Regla de Atención incorpora explícitamente la detección de tono y emojis (véase la sección 3): es el mecanismo compensatorio para no perder de vista el estado emocional del estudiante.
+El punto más débil es **Motivación, Cognición y Emoción (3/10)**. Por ello, la Regla de Atención incorpora explícitamente la detección de tono y emojis (véase la Semana 6): es el mecanismo compensatorio para no perder de vista el estado emocional del estudiante.
 
 ---
 
-## 3. Arquitectura de Atención: Gatekeeper (Semana 6)
+## Semanas 4 y 5
+
+![Evidencia de las Semanas 4 y 5 (1)](https://github.com/user-attachments/assets/c090c52e-4aa1-4e40-8324-e7dfd650062f)
+
+![Evidencia de las Semanas 4 y 5 (2)](https://github.com/user-attachments/assets/46a95c91-38c9-45ff-8c4b-851454b66b45)
+
+---
+
+## Semana 6: Arquitectura de Atención (Gatekeeper)
 
 Esta sección documenta el diseño del **"Gatekeeper"**: el mecanismo que decide qué parte de cada mensaje del estudiante recibe atención real del asistente y qué se descarta como ruido. Corresponde a la Semana 6 (Atención Selectiva y Carga Cognitiva) del plan de desarrollo.
 
-### 3.1 Principio general: señal vs. ruido
+### Principio general: señal vs. ruido
 
 El asistente parte de la base de que **no toda la información de un mensaje es igual de relevante**. Antes de generar una respuesta, el Gatekeeper clasifica el contenido entrante en dos categorías:
 
 - **Señal:** preguntas, código, mensajes de error, palabras clave técnicas (lenguajes, funciones, errores) y marcadores de intención (`?`, `!`, bloques de código entre backticks).
 - **Ruido:** relleno conversacional, repeticiones y contexto irrelevante para el problema técnico planteado.
 
-### 3.2 Regla de Atención (Gatekeeper Rule)
+### Regla de Atención (Gatekeeper Rule)
 
 > **Regla principal:** si el mensaje tiene más de 500 palabras, el mecanismo de atención solo priorizará los **sustantivos clave** y la **última frase** del mensaje.
 
@@ -63,7 +84,7 @@ Esta regla evita la sobrecarga cognitiva del modelo ante mensajes largos, bajo l
 1. Los sustantivos clave concentran la carga semántica del problema (por ejemplo, nombres de lenguajes, funciones y estructuras de datos).
 2. La última frase suele contener la pregunta concreta o la petición final del estudiante, incluso si el resto del mensaje es narrativo.
 
-### 3.3 Inventario de inputs procesados
+### Inventario de inputs procesados
 
 | Input | Ejemplo | Qué detecta el filtro |
 |---|---|---|
@@ -73,7 +94,7 @@ Esta regla evita la sobrecarga cognitiva del modelo ante mensajes largos, bajo l
 | Tono / emojis (si el canal lo permite) | Emoji triste o de enojo | Frustración o confusión del estudiante, para ajustar el tono de respuesta |
 | Palabras clave técnicas | "for", "error", "python" | Lenguaje o tema tratado, para guiar la respuesta técnica |
 
-### 3.4 Flujo de procesamiento
+### Flujo de procesamiento
 
 1. **Mensaje recibido del estudiante:** se registra el momento del mensaje (timestamp) para detectar patrones de estudio.
 2. **Análisis de símbolos:** se buscan signos como `¿`, `!`, backticks o bloques de código para distinguir entre pregunta y código (percepción básica del formato).
@@ -83,18 +104,18 @@ Esta regla evita la sobrecarga cognitiva del modelo ante mensajes largos, bajo l
 
 ---
 
-## 4. Arquitectura de Memoria (Semana 7)
+## Semana 7: Arquitectura de Memoria
 
 Esta sección documenta el diseño de la memoria del asistente y corresponde a la Semana 7 (Memoria y Conocimiento Permanente) del plan de desarrollo. Las tablas simulan el esquema de una base de datos: cada fila representa una categoría de datos almacenados y el tipo de memoria al que pertenece.
 
-### 4.1 Principio general: memoria a largo plazo (LTM)
+### Principio general: memoria a largo plazo (LTM)
 
 El asistente distingue dos tipos de memoria de largo plazo:
 
 - **Memoria semántica:** conocimiento general y estable, independiente del estudiante (su "enciclopedia interna").
 - **Memoria episódica:** información específica de cada estudiante y de sus interacciones previas con el asistente.
 
-### 4.2 Memoria semántica (enciclopedia interna)
+### Memoria semántica (enciclopedia interna)
 
 | Tipo de memoria | Categoría de datos | Descripción | Ejemplo de entrada |
 |---|---|---|---|
@@ -106,7 +127,7 @@ El asistente distingue dos tipos de memoria de largo plazo:
 | Semántica (LTM) | Glosario de tecnicismos | Definiciones claras de términos técnicos para principiantes | "Algoritmo: secuencia finita de pasos para resolver un problema" |
 | Semántica (LTM) | Buenas prácticas | Convenciones básicas de estilo y legibilidad del código | "Usar nombres descriptivos para las variables" |
 
-### 4.3 Memoria episódica (datos del estudiante)
+### Memoria episódica (datos del estudiante)
 
 | Tipo de memoria | Categoría de datos | Descripción | Ejemplo de entrada |
 |---|---|---|---|
@@ -115,13 +136,25 @@ El asistente distingue dos tipos de memoria de largo plazo:
 | Episódica (LTM) | Patrones de estudio | Horarios de consulta obtenidos del timestamp del Gatekeeper | "Consultas frecuentes después de las 11:00 p. m." |
 | Episódica (LTM) | Estado emocional | Frustración o confusión detectada por tono y emojis | "Última sesión: frustración alta ante ciclos `for`" |
 
-### 4.4 Relación con el Gatekeeper
+### Relación con el Gatekeeper
 
-La memoria se articula con la Arquitectura de Atención (sección 3): el Gatekeeper filtra el mensaje del estudiante y las palabras clave técnicas detectadas (por ejemplo, `for`, `error`, `python`) funcionan como consulta hacia la memoria semántica. A su vez, el timestamp y la detección de tono alimentan la memoria episódica, lo que permite ajustar las explicaciones al historial del estudiante.
+La memoria se articula con la Arquitectura de Atención (Semana 6): el Gatekeeper filtra el mensaje del estudiante y las palabras clave técnicas detectadas (por ejemplo, `for`, `error`, `python`) funcionan como consulta hacia la memoria semántica. A su vez, el timestamp y la detección de tono alimentan la memoria episódica, lo que permite ajustar las explicaciones al historial del estudiante.
 
 ---
 
-## 5. Guía de Estilo y Tono (Semana 10)
+## Semana 8
+
+<img width="640" height="790" alt="Evidencia de la Semana 8" src="https://github.com/user-attachments/assets/42733fb3-ec36-4b04-97fe-367a041531f2" />
+
+---
+
+## Semana 9
+
+![Evidencia de la Semana 9](https://github.com/user-attachments/assets/dce5ba09-241c-4678-a9af-bbf14e4c0f1c)
+
+---
+
+## Semana 10: Guía de Estilo y Tono
 
 Si el bot tutor de programación fuera una persona, sería un compañero de estudio paciente, claro y entusiasta que ayuda a desglosar problemas complejos sin intimidar al estudiante.
 
@@ -134,7 +167,13 @@ Si el bot tutor de programación fuera una persona, sería un compañero de estu
 
 ---
 
-## 6. Simulación de Diálogo: Golden Samples (Semana 12)
+## Semana 11
+
+![Evidencia de la Semana 11](https://github.com/user-attachments/assets/68bfc55b-d566-40b3-8cb4-86d2125f3e87)
+
+---
+
+## Semana 12: Simulación de Diálogo (Golden Samples)
 
 ### Caso 1: caso de éxito (explicación de un concepto)
 
@@ -150,26 +189,26 @@ Si el bot tutor de programación fuera una persona, sería un compañero de estu
 
 ---
 
-## 7. Anexo: Evidencias por semana
+## Semana 13
 
-### Semanas 1 y 2
+<img width="392" height="807" alt="Evidencia de la Semana 13" src="https://github.com/user-attachments/assets/6f9b6f3c-e940-4041-8cbb-9dfee2091828" />
 
-![Evidencia de las Semanas 1 y 2](https://github.com/user-attachments/assets/57b86c2d-c6df-4d00-b45c-47f58f8d6970)
+---
 
-### Semanas 4 y 5
+## Semana 14: Lógica y Ética (Mitigación del Sesgo Cognitivo)
 
-![Evidencia de las Semanas 4 y 5 (1)](https://github.com/user-attachments/assets/c090c52e-4aa1-4e40-8324-e7dfd650062f)
+Para el protocolo anti-sesgos se eligió el **sesgo de confirmación**, estudiado por Daniel Kahneman en *Thinking, Fast and Slow*.
 
-![Evidencia de las Semanas 4 y 5 (2)](https://github.com/user-attachments/assets/46a95c91-38c9-45ff-8c4b-851454b66b45)
+### Definición del sesgo
 
-### Semana 8
+Es la tendencia humana a buscar, interpretar y recordar información de manera que confirme las creencias o hipótesis iniciales, ignorando la evidencia contradictoria. En un tutor de programación, un bot sesgado podría asumir de inmediato que el error del estudiante proviene siempre de la misma causa común (por ejemplo, culpar siempre a la indentación o a un mal cierre de llaves) sin verificar el resto del código ni el mensaje de error completo.
 
-<img width="640" height="790" alt="Evidencia de la Semana 8" src="https://github.com/user-attachments/assets/42733fb3-ec36-4b04-97fe-367a041531f2" />
+### Contramedida lógica implementada
 
-### Semana 9
+> Para evitar el sesgo de confirmación, el algoritmo de diagnóstico del asistente está programado para rechazar diagnósticos apresurados. Antes de emitir una conclusión definitiva sobre el origen de un fallo, el bot debe evaluar obligatoriamente al menos dos hipótesis alternativas de error (como revisar tanto el ámbito de las variables como la lógica de las condiciones) antes de sugerir una solución al estudiante.
 
-![Evidencia de la Semana 9](https://github.com/user-attachments/assets/dce5ba09-241c-4678-a9af-bbf14e4c0f1c)
+---
 
-### Semana 11
+## Semana 15
 
-![Evidencia de la Semana 11](https://github.com/user-attachments/assets/68bfc55b-d566-40b3-8cb4-86d2125f3e87)
+<img width="1600" height="372" alt="Evidencia de la Semana 15" src="https://github.com/user-attachments/assets/192af80e-5768-4ab3-b9d7-c3dc44e3dbc2" />
